@@ -42,71 +42,27 @@ button{ font-family: var(--Poppins); cursor: pointer; }
   padding: 0.9rem 2rem;
 }
 
-.nav__brand{
+.navBrand{
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-.nav__dot{
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--goldColor);
-}
-.nav__name{
+
+.navName{
   font-family: var(--serif);
   font-size: 1.05rem;
   letter-spacing: 0.01em;
 }
 
-.nav__search{
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
-  padding: 0.5rem 0.8rem;
-  max-width: 380px;
-  color: var(--FourthColor);
-  transition: border-color 0.2s ease;
-}
-.nav__search:focus-within{
-  border-color: var(--goldColor);
-}
-.nav__search input{
-  border: none;
-  background: transparent;
-  outline: none;
-  color: #f2f4f8;
-  font-size: 0.85rem;
-  width: 100%;
-}
-.nav__search input::placeholder{ color: var(--FourthColor); }
 
-.nav__links{
-  display: flex;
-  gap: 1.6rem;
-  font-size: 0.88rem;
-}
-.nav__link{
-  color: var(--FourthColor);
-  padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-.nav__link:hover{ color: #f2f4f8; }
-.nav__link--active{
-  color: #f2f4f8;
-  border-bottom-color: var(--goldColor);
-}
 
-.nav__actions{
+.navActions{
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.nav__avatar{
+.navAvatar{
   width: 34px; height: 34px;
   border-radius: 50%;
   background: var(--ThirdColor);
@@ -165,7 +121,7 @@ button{ font-family: var(--Poppins); cursor: pointer; }
   flex-wrap: wrap;
 }
 
-.greeting__eyebrow{
+.greetingEyebrow{
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -174,7 +130,7 @@ button{ font-family: var(--Poppins); cursor: pointer; }
   font-weight: 600;
 }
 
-.greeting__title{
+.greetingTitle{
   font-family: var(--serif);
   font-weight: 500;
   font-size: clamp(1.6rem, 3vw, 2.2rem);
@@ -192,15 +148,7 @@ button{ font-family: var(--Poppins); cursor: pointer; }
   flex-direction: column;
   gap: 0.15rem;
 }
-.stat__value{
-  font-family: var(--serif);
-  font-size: 1.6rem;
-  color: var(--primaryColor);
-}
-.stat__label{
-  font-size: 0.76rem;
-  color: var(--mutedColor);
-}
+
 
 
 .layout{
@@ -211,20 +159,20 @@ button{ font-family: var(--Poppins); cursor: pointer; }
 }
 
 
-.feed__head{
+.feedHead{
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.4rem;
 }
-.feed__head h2{
+.feedHead h2{
   font-family: var(--serif);
   font-weight: 500;
   font-size: 1.3rem;
   color: var(--primaryColor);
 }
 
-.feed__filters{
+.feedFilters{
   display: flex;
   gap: 0.5rem;
 }
@@ -253,7 +201,7 @@ button{ font-family: var(--Poppins); cursor: pointer; }
 }
 .card:first-of-type{ padding-top: 0; }
 
-.card__rail{
+.cardRail{
   width: 3px;
   border-radius: 3px;
   background: var(--lineColor);
@@ -262,9 +210,9 @@ button{ font-family: var(--Poppins); cursor: pointer; }
 }
 .card:hover .card__rail{ background: var(--goldColor); }
 
-.card__body{ flex: 1; min-width: 0; }
+.cardBody{ flex: 1; min-width: 0; }
 
-.card__tag{
+.cardTag{
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -273,7 +221,7 @@ button{ font-family: var(--Poppins); cursor: pointer; }
   margin-bottom: 0.5rem;
 }
 
-.card__title{
+.cardTitle{
   font-family: var(--serif);
   font-weight: 500;
   font-size: 1.35rem;
@@ -283,7 +231,7 @@ button{ font-family: var(--Poppins); cursor: pointer; }
 }
 .card:hover .card__title{ color: var(--ThirdColor); }
 
-.card__excerpt{
+.cardExcerpt{
   font-size: 0.92rem;
   line-height: 1.65;
   color: var(--mutedColor);
@@ -291,14 +239,14 @@ button{ font-family: var(--Poppins); cursor: pointer; }
   max-width: 62ch;
 }
 
-.card__footer{
+.cardFooter{
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
 }
 
-.card__author{
+.cardAuthor{
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -319,19 +267,19 @@ button{ font-family: var(--Poppins); cursor: pointer; }
   font-size: 0.72rem;
 }
 
-.card__author-name{
+.cardAuthor-name{
   display: block;
   font-size: 0.83rem;
   font-weight: 600;
   color: var(--inkColor);
 }
-.card__meta{
+.cardMeta{
   display: block;
   font-size: 0.75rem;
   color: var(--mutedColor);
 }
 
-.card__actions{
+.cardActions{
   display: flex;
   gap: 0.4rem;
 }
@@ -373,7 +321,7 @@ button{ font-family: var(--Poppins); cursor: pointer; }
   padding: 1.4rem;
 }
 
-.panel__title{
+.panelTitle{
   font-family: var(--serif);
   font-weight: 500;
   font-size: 1rem;
@@ -438,7 +386,7 @@ button{ font-family: var(--Poppins); cursor: pointer; }
   position: relative;
   overflow: hidden;
 }
-.panel__quote-mark{
+.panelQuote-mark{
   font-family: var(--serif);
   font-size: 3.5rem;
   color: rgba(201, 166, 107, 0.35);
@@ -447,7 +395,7 @@ button{ font-family: var(--Poppins); cursor: pointer; }
   top: 0.2rem;
   right: 1rem;
 }
-.panel__quote{
+.panelQuote{
   font-family: var(--serif);
   font-style: italic;
   font-size: 1rem;

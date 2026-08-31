@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       .join('');
 
     const greetingEl = document.getElementById('greeting-title');
-    const avatarEl = document.getElementById('nav-avatar');
+    const avatarEl = document.getElementById('navAvatar');
 
     if (greetingEl) greetingEl.textContent = `Apa yang ingin kamu tuliskan hari ini, ${namaDepan}?`;
     if (avatarEl) avatarEl.textContent = inisial || '?';
@@ -38,20 +38,20 @@ document.addEventListener('DOMContentLoaded', async () => {
   function cardTemplate(poem) {
     return `
       <article class="card" data-id="${poem?.id}">
-        <div class="card__rail"></div>
-        <div class="card__body">
-          <p class="card__tag">${poem.kategori ?? ''}</p>
-          <h3 class="card__title">${poem.judul}</h3>
-          <p class="card__excerpt">${poem.excerpt}</p>
-          <div class="card__footer">
-            <div class="card__author">
+        <div class="cardRail"></div>
+        <div class="cardBody">
+          <p class="cardTag">${poem.kategori ?? ''}</p>
+          <h3 class="cardTitle">${poem.judul}</h3>
+          <p class="cardExcerpt">${poem.excerpt}</p>
+          <div class="cardFooter">
+            <div class="cardAuthor">
               <span class="avatar avatar--sm">${poem.inisial}</span>
               <div>
-                <span class="card__author-name">${poem.penulis}</span>
-                <span class="card__meta">${poem.tanggal} · ${poem.reading_time}</span>
+                <span class="cardAuthor-name">${poem.penulis}</span>
+                <span class="cardMeta">${poem.tanggal} · ${poem.reading_time}</span>
               </div>
             </div>
-            <div class="card__actions">
+            <div class="cardActions">
               <a class="icon-btn" href="/frontend/page/form.html?id=${poem.id}" aria-label="Edit">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>

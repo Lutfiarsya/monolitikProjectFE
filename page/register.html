@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Masuk - SoulScript</title>
+<title>Daftar - SoulScript</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -24,41 +24,39 @@
         </p>
       </div>
 
-
     </aside>
 
     <main class="panel">
       <div class="panelInner">
 
         <header class="panelHead">
-          <h1>Selamat datang di SoulScript</h1>
+          <h1>Buat akun SoulScript</h1>
         </header>
 
         <form class="form" action="#" method="post">
 
           <div class="field">
-            <input type="username" id="username" name="username" placeholder="username" required>
+            <input type="text" id="nama" name="nama" placeholder="nama lengkap" required>
+          </div>
+
+          <div class="field">
+            <input type="text" id="username" name="username" placeholder="username" required>
           </div>
 
           <div class="field">
             <input type="password" id="password" name="password" placeholder="password" required>
           </div>
 
-          <div class="formRow">
-            <label class="check">
-              <input type="checkbox" name="remember">
-              <span class="checkBox"></span>
-              Ingat saya
-            </label>
-            <a href="#" class="link">Lupa kata sandi?</a>
+          <div class="field">
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="konfirmasi password" required>
           </div>
 
-          <button type="submit" class="btn">Masuk</button>
+          <button type="submit" class="btn">Daftar</button>
 
         </form>
 
         <p class="panel__foot">
-          Belum punya akun? <a href="./register.html" class="link link--strong">Daftar</a>
+          Sudah punya akun? <a href="login.html" class="link link--strong">Masuk</a>
         </p>
 
       </div>
@@ -71,27 +69,33 @@ const formContainer = document.querySelector('.form');
 formContainer.addEventListener('submit', async(event) => {
   event.preventDefault();
 
-  const username = document.getElementById('username').value
-  const password = document.getElementById('password').value
+  const nama = document.getElementById('nama').value;
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+
+  if (password !== confirmPassword) {
+    alert('Password dan konfirmasi password tidak sama');
+    return;
+  }
 
   try{
-    const response = await fetch('http://localhost:3000/login', {
+    const response = await fetch('http://localhost:3000/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      credentials: 'include', 
-      body: JSON.stringify({ username, password }),
+      credentials: 'include',
+      body: JSON.stringify({ nama, username, password }),
     })
 
     const data = await response.json()
 
     if(response.ok){
-      // TIDAK PAKAI localStorage lagi — sesi login sekarang disimpan
-      // server (di RAM) dan dilacak lewat cookie otomatis.
-      window.location.href = "../index.html"
+      alert('Registrasi berhasil! Silakan login.');
+      window.location.href = "login.html"
     } else {
-      alert(data.message || 'Username atau password salah');
+      alert(data.message || 'Registrasi gagal');
     }
   }catch(err){
     console.error(err);
