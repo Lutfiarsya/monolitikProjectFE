@@ -1,0 +1,59 @@
+.form-wrap {
+  max-width: 640px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.form-wrap h1 {
+  font-family: 'Fraunces', serif;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  min-height: 220px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#form-message {
+  margin-top: 12px;
+  font-size: 14px;
+}

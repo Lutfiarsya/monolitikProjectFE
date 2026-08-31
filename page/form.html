@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tulis Puisi — SoulScript</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../form.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__brand">
+      <span class="nav__dot"></span>
+      <span class="nav__name">SoulScript</span>
+    </div>
+    <nav class="nav__links">
+      <a href="../index.html" class="nav__link">Beranda</a>
+    </nav>
+  </header>
+
+  <div class="form-wrap">
+    <h1 id="form-title">Tulis Puisi Baru</h1>
+
+    <form id="puisi-form">
+      <input type="hidden" id="puisi-id" value="">
+
+      <div class="form-group">
+        <label for="judul">Judul</label>
+        <input type="text" id="judul" maxlength="30" required>
+      </div>
+
+      <div class="form-group">
+        <label for="kategori">Kategori</label>
+        <input type="text" id="kategori" maxlength="30" placeholder="Cinta, Alam, Kehilangan, dst.">
+      </div>
+
+      <div class="form-group">
+        <label for="keyword">Kata kunci</label>
+        <input type="text" id="keyword" maxlength="30" placeholder="Pisahkan dengan koma">
+      </div>
+
+      <div class="form-group">
+        <label for="isi">Isi Puisi</label>
+        <textarea id="isi" required></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn--ghost" id="submit-btn">Simpan</button>
+        <a href="../index.html" class="btn btn--outline">Batal</a>
+      </div>
+
+      <p id="form-message"></p>
+    </form>
+  </div>
+  <script src="../auth.js"></script>
+  <script src="../form.js"></script>
+</body>
+</html>

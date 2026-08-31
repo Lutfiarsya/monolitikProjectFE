@@ -1,0 +1,250 @@
+
+:root{
+  --primaryColor: #0a1628;
+  --SecondaryColor: #10203a;
+  --ThirdColor: #2c4a7c;
+  --FourthColor: #5f7fae;
+
+  --serif: "Fraunces", serif;
+  --sans:  "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --Poppins: "Poppins", sans-serif;
+}
+
+*{ box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body{ height: 100%; }
+
+body{
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--navy-900);
+  -webkit-font-smoothing: antialiased;
+}
+
+a{ color: inherit; text-decoration: none; }
+
+
+.wrap{
+  display: grid;
+  grid-template-columns: minmax(320px, 42%) 1fr;
+  min-height: 100vh;
+}
+
+.brand{
+  position: relative;
+  background:
+    radial-gradient(circle at 18% 20%, var(--SecondaryColor) 0%, transparent 45%),
+    linear-gradient(165deg, var(--primaryColor) 0%, #081221 100%);
+  color: #f2f4f8;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+
+.brandQuote{
+  margin-top: auto;
+}
+
+.brandLines{
+  font-family: var(--Poppins);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: #f7f5ef;
+}
+
+
+
+
+@keyframes pulse{
+  0%, 100%{ opacity: 0.35; transform: scale(1); }
+  50%{ opacity: 1; transform: scale(1.5); }
+}
+
+.brandFoot{
+  font-size: 0.8rem;
+  color: var(--ThirdColor);
+  letter-spacing: 0.01em;
+}
+
+
+.panel{
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+}
+
+.panelInner{
+  width: 100%;
+  max-width: 380px;
+}
+
+.panelHead{
+  margin-bottom: 2.4rem;
+}
+
+.panelHead h1{
+  font-family: var(--Poppins);
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--navy-900);
+  margin-bottom: 0.5rem;
+}
+
+.panelHead p{
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.field{
+  position: relative;
+}
+
+.field input{
+  width: 100%;
+  border: none;
+  border-bottom: 1.5px solid var(--primaryColor);
+  background: transparent;
+  padding: 0.6rem 0 0.6rem 0;
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+
+
+.field label{
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  font-size: 0.98rem;
+  color: var(--muted);
+  pointer-events: none;
+  transition: all 0.18s ease;
+}
+
+
+.formRow{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.check{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primaryColor);
+  cursor: pointer;
+  user-select: none;
+}
+
+.check input{
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkBox{
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--SecondaryColor);
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.check input:checked + .checkBox{
+  background: var(--primaryColor);
+  border-color: var(--primaryColor);
+}
+
+.check input:checked + .checkBox::after{
+  content: "";
+  position: absolute;
+  left: 4.5px;
+  top: 1.5px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+}
+
+.link{
+  color: var(--ThirdColor);
+  font-weight: 500;
+}
+.link:hover{ text-decoration: underline; }
+
+.link--strong{
+  color: var(--primaryColor);
+  font-weight: 600;
+}
+
+.btn{
+  margin-top: 0.4rem;
+  padding: 0.85rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--primaryColor);
+  color: #f7f5ef;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn:hover{
+  background: var(--ThirdColor);
+}
+
+.btn:active{
+  transform: scale(0.98);
+}
+
+.panelFoot{
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--primaryColor);
+}
+
+
+
+
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible{
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .brand__signal span{
+    animation: none;
+    opacity: 0.7;
+  }
+}

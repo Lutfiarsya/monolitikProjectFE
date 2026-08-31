@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masuk - SoulScript</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <aside class="brand">
+      <div class="brandMark">
+        <h2>SoulScript</h2>
+      </div>
+
+      <div class="brandQuote">
+        <p class="brandLines">
+            Every Words Has A Meaning
+        </p>
+      </div>
+
+
+    </aside>
+
+    <main class="panel">
+      <div class="panelInner">
+
+        <header class="panelHead">
+          <h1>Selamat datang di SoulScript</h1>
+        </header>
+
+        <form class="form" action="#" method="post">
+
+          <div class="field">
+            <input type="username" id="username" name="username" placeholder="username" required>
+          </div>
+
+          <div class="field">
+            <input type="password" id="password" name="password" placeholder="password" required>
+          </div>
+
+          <div class="formRow">
+            <label class="check">
+              <input type="checkbox" name="remember">
+              <span class="checkBox"></span>
+              Ingat saya
+            </label>
+            <a href="#" class="link">Lupa kata sandi?</a>
+          </div>
+
+          <button type="submit" class="btn">Masuk</button>
+
+        </form>
+
+        <p class="panel__foot">
+          Belum punya akun? <a href="#" class="link link--strong">Daftar</a>
+        </p>
+
+      </div>
+    </main>
+
+  </div>
+<script>
+const formContainer = document.querySelector('.form');
+
+formContainer.addEventListener('submit', async(event) => {
+  event.preventDefault();
+
+  const username = document.getElementById('username').value
+  const password = document.getElementById('password').value
+
+  try{
+    const response = await fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include', // WAJIB: biar cookie sesi dari server tersimpan di browser
+      body: JSON.stringify({ username, password }),
+    })
+
+    const data = await response.json()
+
+    if(response.ok){
+      // TIDAK PAKAI localStorage lagi — sesi login sekarang disimpan
+      // server (di RAM) dan dilacak lewat cookie otomatis.
+      window.location.href = "../index.html"
+    } else {
+      alert(data.message || 'Username atau password salah');
+    }
+  }catch(err){
+    console.error(err);
+    alert('Gagal terhubung ke server. Cek apakah backend jalan.');
+  }
+})
+</script>
+</body>
+</html>

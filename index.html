@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dasbor — SoulScript</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__brand">
+      <span class="nav__dot"></span>
+      <span class="nav__name">SoulScript</span>
+    </div>
+
+
+
+    <nav class="nav__links">
+
+    </nav>
+
+      <a href="./page/form.html" class="btn createBtn btn--ghost">
+        Tulis
+      </a>
+      <div class="nav__avatar"></div>
+  </header>
+
+  <div class="page">
+
+    <section class="greeting">
+      <div>
+        <p class="greeting__eyebrow">Selamat datang kembali</p>
+      </div>
+    </section>
+
+    <div class="layout">
+
+      <main class="feed">
+
+        <div class="feed__head">
+          <h2>Untuk kamu</h2>
+
+        </div>
+
+        <div class="feed__list" id="feed-list"></div>
+
+        <button class="btn btn--outline load-more">Muat lebih banyak</button>
+
+      </main>
+    </div>
+  </div>
+  <script src="auth.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
