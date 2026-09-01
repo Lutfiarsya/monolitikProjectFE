@@ -57,3 +57,33 @@
   margin-top: 12px;
   font-size: 14px;
 }
+
+.nav{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 2rem;
+  background: var(--primaryColor);
+  color: #f2f4f8;
+  padding: 0.9rem 2rem;
+}
+
+.navBrand{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navName{
+  font-family: "Poppins";
+  font-size: 3rem;
+  letter-spacing: 0.01em;
+}
+
+.backBtn{
+  list-style: none;
+  color: black;
+}
