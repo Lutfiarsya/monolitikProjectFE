@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       if (!res.ok) throw new Error(json.message || 'Gagal menyimpan puisi');
 
-      window.location.href = '/frontend/index.html';
+      window.location.href = '../index.html';
     } catch (err) {
       messageEl.textContent = err.message;
       messageEl.style.color = 'red';
